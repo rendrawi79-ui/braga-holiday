@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DATABASE DRIVER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /*  */
+    body {
+      background-color: #311301;
+      font-family: Trebuchet MS; 
+    }
+    #form-container {
+      width: 500px;
+      margin: 0 auto;
+      background-color: #f1f1f7;
+      border: 2px solid #da0808;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    #form-container h2 {
+      text-align: center;
+      color: #1E90FF;
+    }
+    #form-container input[type="text"], #form-container input[type="date"], #form-container input[type="tel"] , #form-container input[type="number"],#form-container input[type="time"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #f1d0d0;
+      border-radius: 5px;
+    }
+    #form-container input[type="submit"] {
+      background-color: #1E90FF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    #form-container input[type="submit"]:hover {
+      background-color: #004B8D;
+    }
+    #footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 20px;
+      color: #f7f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="form-container">
+    <h2>DATABASE DRIVER</h2>
+    <!-- akses link script app -->
+    <form action="https://script.google.com/macros/s/AKfycbyCN_hnWe8mL8ryd51FXi9yy1Ufm2wi__5letFk89aWnIwTURvf17P_JzL7PBogadI/exec" method="post">
+    <!-- end akses  -->
+
+      <label for="id_driver">ID DRIVER  :</label>
+      <input type="text" id="id_driver" name="id_driver" required>
+      <label for="nama_lengkap">NAMA LENGKAP  :</label>
+      <input type="text" id="nama_lengkap" name="nama_lengkap" required>
+      <label for="tempat_tgl_lahir">TEMPAT / TANGGAL LAHIR  :</label>
+      <input type="text" id="tempat_tgl_lahir" name="tempat_tgl_lahir" required>
+      <label for="jenis_kelamin">JENIS KELAMIN  :</label>
+      <input type="text" id="jenis_kelamin" name="jenis_kelamin" required>
+      <label for="agama">AGAMA  :</label>
+      <input type="text" id="agama" name="agama" required>
+      <label for="no_hp_1">NOMOR HANDPHONE 1  :</label>
+      <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12}" required>
+      <label for="no_hp_2">NOMOR HANDPHONE 2  :</label>
+      <input type="tel" id="no_hp_2" name="no_hp_2" pattern="[0-9]{10,12}" required>
+      <label for="email">EMAIL  :</label>
+      <input type="text" id="email" name="email" required>
+      <label for="alamat_lengkap">ALAMAT LENGKAP  :</label>
+      <input type="text" id="alamat_lengkap" name="alamat_lengkap" required>
+      <label for="status_perkawinan">STATUS PERKAWINAN  :</label>
+      <input type="text" id="status_perkawinan" name="status_perkawinan" required>
+      <label for="nama_pasangan">NAMA PASANGAN  :</label>
+      <input type="text" id="nama_pasangan" name="nama_pasangan" required>
+      <label for="no_hp_pasangan">NOMOR HANDPHONE PASANGAN  :</label>
+      <input type="tel" id="no_hp_pasangan" name="no_hp_pasangan" pattern="[0-9]{10,12}" required>
+      <label for="jumlah_anak">JUMLAH ANAK  :</label>
+      <input type="number" id="jumlah_anak" name="jumlah_anak" required>
+      <label for="nama_orangtua">NAMA ORANGTUA  :</label>
+      <input type="text" id="nama_orangtua" name="nama_orangtua" required>
+      <label for="no_hp_orangtua">NOMOR HANDPHONE ORANGTUA  :</label>
+      <input type="tel" id="no_hp_orangtua" name="no_hp_orangtua" pattern="[0-9]{10,12}" required>
+      <label for="no_sim">NOMOR SIM  :</label>
+      <input type="number" id="no_sim" name="no_sim" required>
+      <label for="kelas_sim">KELAS SIM  :</label>
+      <input type="text" id="kelas_sim" name="kelas_sim" required>
+      <label for="masa_berlaku_sim">MASA BERLAKU SIM  :</label>
+      <input type="date" id="masa_berlaku_sim" name="masa_berlaku_sim" required>
+      <label for="pengalaman_mengemudi">PENGALAMAN MENGEMUDI  :</label>
+      <input type="text" id="pengalaman_mengemudi" name="pengalaman_mengemudi" required>
+      <label for="jenis_kendaraan">JENIS KENDARAAN DIKUASAI  :</label>
+      <input type="text" id="jenis_kendaraan" name="jenis_kendaraan" required>
+      <label for="sertifikat_mengemudi">SERTIFIKAT MENGEMUDI  :</label>
+      <input type="text" id="sertifikat_mengemudi" name="sertifikat_mengemudi" required>
+      <label for="pendidikan_terakhir">PENDIDIKAN TERAKHIR  :</label>
+      <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" required>
+      <label for="nama_sekolah">NAMA SEKOLAH  :</label>
+      <input type="text" id="nama_sekolah" name="nama_sekolah" required>
+      <label for="tahun_lulus">TAHUN LULUS  :</label>
+      <input type="number" id="tahun_lulus" name="tahun_lulus" required>
+      <label for="nama_perusahaan_sebelumnya">NAMA PERUSAHAAN SEBELUMNYA  :</label>
+      <input type="text" id="nama_perusahaan_sebelumnya" name="nama_perusahaan_sebelumnya" required>
+      <label for="jabatan">JABATAN  :</label>
+      <input type="text" id="jabatan" name="jabatan" required>
+      <label for="periode_bekerja">PERIODE BEKERJA  :</label>
+      <input type="text" id="periode_bekerja" name="periode_bekerja" required>
+      <label for="alasan_berhenti">ALASAN BERHENTI  :</label>
+      <input type="text" id="alasan_berhenti" name="alasan_berhenti" required>
+      <label for="riwayat_penyakit_berat">RIWAYAT PENYAKIT BERAT  :</label>
+      <input type="text" id="riwayat_penyakit_berat" name="riwayat_penyakit_berat" required>
+      <label for="status_kesehatan">STATUS KESEHATAN SAAT INI  :</label>
+      <input type="text" id="status_kesehatan" name="status_kesehatan" required>
+      <label for="asuransi">KEPEMILIKAN ASURANSI KESEHATAN  :</label>
+      <input type="text" id="asuransi" name="asuransi" required>
+      <label for="no_asuransi">NOMOR ASURANSI  :</label>
+      <input type="text" id="no_asuransi" name="no_asuransi" required>
+      <input type="submit" value="Simpan Data">
+    </form>
+  </div>
+
+  <div id="footer">
+    BRAGA HOLIDAY INDONESIA
+  </div>
+
+</body>
+</html>
