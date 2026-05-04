@@ -29,7 +29,7 @@
       border: 2px solid #f1d0d0;
       border-radius: 5px;
     }
-     #form-container select[type="pilihan"] {
+     #form-container select[type="submit"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 20px;
@@ -91,21 +91,21 @@
       <input type="text" id="nama_lengkap" name="nama_lengkap" required>
       <label for="tempat_tgl_lahir">TEMPAT / TANGGAL LAHIR  :</label>
       <input type="text" id="tempat_tgl_lahir" name="tempat_tgl_lahir" required>
-      <label for="pilihan">JENIS KELAMIN:</label>
+      <label for="jenis_kelamin">JENIS KELAMIN:</label>
       <select type="pilihan" name="pilihan" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="pria">PRIA</option>
       <option value="wanita">WANITA</option>
-      </input>
+      </select>
       <label for="agama">AGAMA  :</label>
-     <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" name="pilihan" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="islam">ISLAM</option>
       <option value="kristen">KRISTEN</option>
       <option value="hindu">HINDU</option>
       <option value="budha">BUDHA</option>
       <option value="lainnya">LAINNYA</option>
-      </input>
+      </select>
       <label for="no_hp_1">NOMOR HANDPHONE 1  :</label>
       <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12}" required>
       <label for="no_hp_2">NOMOR HANDPHONE 2  :</label>
@@ -120,7 +120,7 @@
       <option value="menikah">MENIKAH</option>
       <option value="belum_menikah">BELUM MENIKAH</option>
       <option value="pernah_menikah">PERNAH MENIKAH</option>
-      </input>
+      </select>
       <label for="nama_pasangan">NAMA PASANGAN  :</label>
       <input type="text" id="nama_pasangan" name="nama_pasangan" required>
       <label for="no_hp_pasangan">NOMOR HANDPHONE PASANGAN  :</label>
@@ -142,7 +142,7 @@
       <option value="b1_umum">B1 UMUM</option>
       <option value="b2">B2</option>
       <option value="b2_umum">B2 UMUM</option>
-      </input>
+      </select>
       <label for="masa_berlaku_sim">MASA BERLAKU SIM  :</label>
       <input type="date" id="masa_berlaku_sim" name="masa_berlaku_sim" required>
       <label for="pengalaman_mengemudi">PENGALAMAN MENGEMUDI  :</label>
@@ -152,14 +152,14 @@
       <label for="sertifikat_mengemudi">SERTIFIKAT MENGEMUDI  :</label>
       <input type="text" id="sertifikat_mengemudi" name="sertifikat_mengemudi" required>
       <label for="pendidikan_terakhir">PENDIDIKAN TERAKHIR  :</label>
-     <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" name="pilihan" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="sarjana">SARJANA</option>
       <option value="smu">SMU/SMK/MA SEDERAJAT</option>
       <option value="smp">SMP/MTS SEDERAJAT</option>
       <option value="sd">SD/MI SEDERAJAT</option>
       <option value="tidak_sekolah">TIDAK SEKOLAH</option>
-      </input>
+      </select>
       <label for="nama_sekolah">NAMA SEKOLAH  :</label>
       <input type="text" id="nama_sekolah" name="nama_sekolah" required>
       <label for="tahun_lulus">TAHUN LULUS  :</label>
@@ -179,13 +179,13 @@
       <option value="" disabled selected>--Pilih--</option>
       <option value="sehat">SEHAT</option>
       <option value="berobat">SEDANG DALAM PENGOBATAN</option>
-      </input>
+      </select>
       <label for="asuransi">KEPEMILIKAN ASURANSI KESEHATAN  :</label>
       <input type="text" id="asuransi" name="asuransi" required>
       <label for="no_asuransi">NOMOR ASURANSI  :</label>
       <input type="text" id="no_asuransi" name="no_asuransi" required>
       <input type="submit" value="SIMPAN DATA">
-      <button type="edit" class="button-edit" onclick="editData()">EDIT</button>
+      <button type="edit" value="editData" class="button-edit" onclick="editData()">EDIT</button>
       <form action="/search" method="get" style="display: flex;"></form> 
       <input type="search" placeholder="Cari..." name="q" style="padding: 5px;;">
       <button type="search" style="padding: 10px 20px;">SEARCH</button> 
