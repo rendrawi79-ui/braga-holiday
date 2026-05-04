@@ -94,28 +94,28 @@
       <label for="jenis_kelamin">JENIS KELAMIN:</label>
       <select type="pilihan" id="jenis_kelamin" name="jenis_kelamin" required>
       <option value="" disabled selected>--Pilih--</option>
-      <option value="pria">PRIA</label>
-      <option value="wanita">WANITA</label>
+      <option value="pria">PRIA</option>
+      <option value="wanita">WANITA</option>
       </select>
       <label for="agama">AGAMA  :</label>
-       <select type="pilihan" id="agama" name="agama" required>
+      <select type="pilihan" id="agama" name="agama" required>
       <option value="" disabled selected>--Pilih--</option>
-      <option value="islam">ISLAM</label>
-      <option value="kristen">KRISTEN</label>
-      <option value="hindu">HINDU</label>
-      <option value="budha">BUDHA</label>
-      <option value="lainnya">LAINNYA</label>
+      <option value="islam">ISLAM</option>
+      <option value="kristen">KRISTEN</option>
+      <option value="hindu">HINDU</option>
+      <option value="budha">BUDHA</option>
+      <option value="lainnya">LAINNYA</option>
       </select>
       <label for="no_hp_1">NOMOR HANDPHONE 1  :</label>
-      <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12}" required>
+      <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12,13}" required>
       <label for="no_hp_2">NOMOR HANDPHONE 2  :</label>
-      <input type="tel" id="no_hp_2" name="no_hp_2" pattern="[0-9]{10,12}" required>
+      <input type="tel" id="no_hp_2" name="no_hp_2" pattern="[0-9]{10,12,13}" required>
       <label for="email">EMAIL  :</label>
       <input type="text" id="email" name="email" required>
       <label for="alamat_lengkap">ALAMAT LENGKAP  :</label>
       <input type="text" id="alamat_lengkap" name="alamat_lengkap" required>
       <label for="status_perkawinan">STATUS PERKAWINAN  :</label>
-      <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" id="status_perkawinan" name="status_perkawinan" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="menikah">MENIKAH</option>
       <option value="belum_menikah">BELUM MENIKAH</option>
@@ -134,7 +134,7 @@
       <label for="no_sim">NOMOR SIM  :</label>
       <input type="number" id="no_sim" name="no_sim" required>
       <label for="kelas_sim">KELAS SIM  :</label>
-      <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" id="kelas_sim" name="kelas_sim" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="a">A</option>
       <option value="a_umum">A UMUM</option>
@@ -152,7 +152,7 @@
       <label for="sertifikat_mengemudi">SERTIFIKAT MENGEMUDI  :</label>
       <input type="text" id="sertifikat_mengemudi" name="sertifikat_mengemudi" required>
       <label for="pendidikan_terakhir">PENDIDIKAN TERAKHIR  :</label>
-      <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" id="pendidikan_terakhir" name="pendidikan_terakhir" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="sarjana">SARJANA</option>
       <option value="smu">SMU/SMK/MA SEDERAJAT</option>
@@ -175,7 +175,7 @@
       <label for="riwayat_penyakit_berat">RIWAYAT PENYAKIT BERAT  :</label>
       <input type="text" id="riwayat_penyakit_berat" name="riwayat_penyakit_berat" required>
       <label for="status_kesehatan">STATUS KESEHATAN SAAT INI  :</label>
-      <select type="pilihan" name="pilihan" required>
+      <select type="pilihan" id="status_kesehatan" name="status_kesehatan" required>
       <option value="" disabled selected>--Pilih--</option>
       <option value="sehat">SEHAT</option>
       <option value="berobat">SEDANG DALAM PENGOBATAN</option>
@@ -185,7 +185,7 @@
       <label for="no_asuransi">NOMOR ASURANSI  :</label>
       <input type="text" id="no_asuransi" name="no_asuransi" required>
       <input type="submit" value="SIMPAN DATA">
-      <button type="edit" value="editData" class="button-edit" onclick="editData()">EDIT</button>
+      <button type="edit" value="EDIT DATA" class="button-edit" onclick="editData()">EDIT</button>
       <form action="/search" method="get" style="display: flex;"></form> 
       <input type="search" placeholder="Cari..." name="q" style="padding: 5px;;">
       <button type="search" style="padding: 10px 20px;">SEARCH</button> 
