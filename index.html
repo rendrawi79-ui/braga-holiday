@@ -7,7 +7,7 @@
   <style>
     /*  */
     body {
-      background-color:#000000;
+      background-color: #00000;
       font-family: Trebuchet MS;
       background-image: url('1.png');
       background-size: cover;
@@ -29,7 +29,7 @@
       text-align: center;
       color: #1E90FF;
     }
-    #form-container input[type="text"],#form-container select[type="pilihan"], #form-container input[type="date"], #form-container input[type="tel"] , #form-container input[type="number"],#form-container input[type="time"] {
+    #form-container input[type="text"], #form-container select[type="pilihan"], #form-container input[type="date"], #form-container input[type="tel"] , #form-container input[type="number"],#form-container input[type="time"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 20px;
@@ -79,7 +79,7 @@
     #footer {
       text-align: center;
       margin-top: 30px;
-      font-size: 40px;
+      font-size: 20px;
       color: #f7f1f1;
     }
   </style>
@@ -114,9 +114,9 @@
       <option value="LAINNYA">LAINNYA</option>
       </select>
       <label for="no_hp_1">NOMOR HANDPHONE 1  :</label>
-      <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12,13}" required>
+      <input type="tel" id="no_hp1" name="no_hp_1" pattern="[0-9]{10,12}" required>
       <label for="no_hp_2">NOMOR HANDPHONE 2  :</label>
-      <input type="tel" id="no_hp_2" name="no_hp_2" pattern="[0-9]{10,12,13}" required>
+      <input type="tel" id="no_hp_2" name="no_hp_2" pattern="[0-9]{10,12}" required>
       <label for="email">EMAIL  :</label>
       <input type="text" id="email" name="email" required>
       <label for="alamat_lengkap">ALAMAT LENGKAP  :</label>
@@ -149,7 +149,6 @@
       <option value="SIM B1 UMUM">SIM B1 UMUM</option>
       <option value="SIM B2">SIM B2</option>
       <option value="SIM B2 UMUM">SIM B2 UMUM</option>
-      <option value="BELUM PUNYA SIM">BELUM PUNYA SIM</option>  
       </select>
       <label for="masa_berlaku_sim">MASA BERLAKU SIM  :</label>
       <input type="date" id="masa_berlaku_sim" name="masa_berlaku_sim" required>
@@ -193,17 +192,13 @@
       <label for="no_asuransi">NOMOR ASURANSI  :</label>
       <input type="text" id="no_asuransi" name="no_asuransi" required>
       <input type="submit" value="SIMPAN DATA">
-      <button type="edit" value="EDIT DATA" class="button-edit" onclick="editData()">EDIT</button>
-      <form action="/search" method="get" style="display: flex;"></form> 
-      <input type="search" placeholder="Cari..." name="q" style="padding: 5px;;">
-      <button type="search" style="padding: 10px 20px;">SEARCH</button> 
-      <i class="fa fa-search"></i>
+      <button type="edit" class="button-edit" onclick="editData()">EDIT</button>
       </button>
 
 
     </form>
   </div>
-
+  
   <div id="footer">
     BRAGA HOLIDAY INDONESIA
   </div>
@@ -211,3 +206,61 @@
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARI DATA DRIVER</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { padding: 10px; width: 300px; }
+    button { padding: 10px; cursor: pointer; }
+    .hasil-box { margin-top: 20px; padding: 10px; border: 1px solid #ddd; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+      
+  <h2>Cari Data Driver</h2>
+  <input type="text" id="keyword" placeholder="Masukkan kata kunci pencarian...">
+  <button onclick="cariData()">Cari</button>
+
+  <div id="hasil" class="hasil-box">Hasil pencarian akan muncul di sini...</div>
+
+  <script>
+    const URL_API = "https://script.google.com/macros/s/AKfycbxXy8bqJSZ5h8-A1A2X-hRlytNLvDSk9_Wx-t31dHSrsE-Rzn99n5IzMahp46BF3Po/exec"; // Ganti dengan URL Apps Script Anda!
+
+    async function cariData() {
+      const keyword = document.getElementById("keyword").value.toLowerCase();
+      const hasilDiv = document.getElementById("hasil");
+      hasilDiv.innerHTML = "Mencari data...";
+
+      try {
+        const response = await fetch(URL_API);
+        const data = await response.json();
+
+        // Cari data yang sesuai dengan kata kunci (di sini mencari berdasarkan kolom "Nama Barang")
+        const hasilCari = data.filter(item => 
+          item["id_driver"].toLowerCase().includes(keyword)
+        );
+
+        if (hasilCari.length > 0) {
+          let output = "<ul>";
+          hasilCari.forEach(item => {
+            output += `<li><strong>${item["id_driver"]}</strong> - Nama : ${item["nama_lengkap"]}- TEMPAT/TANGGAL LAHIR : ${item["tempat_tgl_lahir"]}- JENIS KELAMIN : ${item["jenis_kelamin"]}- AGAMA : ${item["agama"]}- NO HANDPHONE 1 : ${item["no_hp_1"]}- NO HANDPHONE 2 : ${item["no_hp_2"]}- EMAIL: ${item["email"]}- ALAMAT LENGKAP : ${item["alamat_lengkap"]}- STATUS PERKAWINAN : ${item["status_perkawinan"]}- NAMA PASANGAN : ${item["nama_pasangan"]}- NO HANDPHONE PASANGAN : ${item["no_hp_pasangan"]}- JUMLAH ANAK : ${item["jumlah_anak"]}- NAMA ORANGTUA: ${item["nama_orangtua"]}- NO HANDPHONE ORANGTUA : ${item["no_hp_orangtua"]}- NOMOR SIM : ${item["no_sim"]}- KELAS SIM : ${item["kelas_sim"]}- MASA BERLAKU SIM : ${item["masa_berlaku_sim"]}- PENGALAMAN MENGEMUDI : ${item["pengalaman_mengemudi"]}- JENIS KENDARAAN DIKUASAI : ${item["jenis_kendaraan"]}- SERTIFIKAT MENGEMUDI : ${item["sertifikat_mengemudi"]}- PENDIDIKAN TERAKHIR : ${item["pendidikan_terakhir"]}- NAMA SEKOLAH : ${item["nama_sekolah"]}- TAHUN LULUS : ${item["tahun_lulus"]}- NAMA PERUSAHAAN SEBELUMNYA : ${item["nama_perusahaan_sebelumnya"]}- JABATAN : ${item["jabatan"]}- PERIODE BEKERJA : ${item["periode_bekerja"]}- ALASAN BERHENTI : ${item["alasan_berhenti"]}- RIWAYAT PENYAKIT BERAT : ${item["riwayat_penyakit_berat"]}- STATUS KESEHATAN SAAT INI : ${item["status_kesehatan"]}- KEPIMILIKAN ASURANSI KESEHATAN : ${item["asuransi"]}- NOMOR ASURANSI : ${item["no_asuransi"]}</li>`;
+          });
+          output += "</ul>";
+          hasilDiv.innerHTML = output;
+        } else {
+          hasilDiv.innerHTML = "Data tidak ditemukan.";
+        }
+      } catch (error) {
+        hasilDiv.innerHTML = "Terjadi kesalahan saat mengambil data.";
+        console.error(error);
+      }
+    }
+  </script>
+  </body>
+
+</html>
